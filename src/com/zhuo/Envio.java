@@ -15,13 +15,13 @@ public class Envio extends Thread{
 	@Override
 	public void run() {
 		while(!almacen.error){
+			piezas = 400 + random.nextInt(601);
+			almacen.enviar(piezas);
 			try {
 				Thread.sleep(800);
 			} catch (InterruptedException e) {
 				e.printStackTrace();
 			}
-			piezas = 400 + random.nextInt(601);
-			almacen.retirar(piezas);
 		}
 	}
 }
