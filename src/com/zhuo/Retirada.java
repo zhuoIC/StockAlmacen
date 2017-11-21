@@ -15,13 +15,13 @@ public class Retirada extends Thread{
 	@Override
 	public void run() {
 		while (!almacen.error){
+			piezas = 2000 + random.nextInt(501);
+			almacen.retirar(piezas);
 			try {
 				Thread.sleep(2400);
 			} catch (InterruptedException e) {
 				e.printStackTrace();
 			}
-			piezas = 2000 + random.nextInt(501);
-			almacen.enviar(piezas);
 		}
 	}
 }
